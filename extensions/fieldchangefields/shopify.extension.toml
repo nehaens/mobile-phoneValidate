@@ -15,13 +15,15 @@ type = "ui_extension"
 # and the file that contains your extension’s source code. Learn more:
 # https://shopify.dev/docs/api/checkout-ui-extensions/unstable/extension-targets-overview
 
-[[extensions.targeting]]
-module = "./src/Checkout.jsx"
-target = "purchase.checkout.block.render"
+# [[extensions.targeting]]
+# module = "./src/Checkout.jsx"
+# target = "purchase.checkout.block.render"
 
 [[extensions.targeting]]
 module = "./src/Inputfield.jsx"
 target = "purchase.checkout.delivery-address.render-before"
+
+
 
 [extensions.capabilities]
 # Gives your extension access to directly query Shopify’s storefront API.

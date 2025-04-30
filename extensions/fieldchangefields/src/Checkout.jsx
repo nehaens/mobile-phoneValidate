@@ -4,6 +4,7 @@ import {
   useBuyerJourneyIntercept,
   useEmail,
   usePhone,
+  BlockStack,
 } from "@shopify/ui-extensions-react/checkout";
 
 export default reactExtension("purchase.checkout.block.render", () => (
@@ -19,6 +20,8 @@ console.log(tgt_shipping,"tgt_shipping>>>>")
     
 const emailValue = email;
 const phoneValue = phone ;
+console.log(phoneValue,"phoneValue")
+console.log(emailValue,"emailValue")
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 if(phoneValue !== undefined)
 {
@@ -72,5 +75,17 @@ else if(phoneValue === undefined)
   });
 }
 
-  return null;
+return (
+  <BlockStack
+    padding="base"
+    border="base"
+    borderRadius="base"
+    background="subdued"
+    inlineSize="1/2"
+  >
+    <Text emphasis="bold">
+      Get INR 350 on orders worth Rs. 4999 or above using Simple
+    </Text>
+  </BlockStack>
+);
 }
